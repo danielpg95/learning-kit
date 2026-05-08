@@ -42,3 +42,12 @@ teaching mode unless told otherwise.
 - Always write at least one test for new functionality
 - Prefer small, focused functions over large ones
 - Comment the WHY, not the WHAT
+
+### Design awareness (passive mode)
+- When generating UI, briefly note WHY you chose specific spacing,
+  colors, or layout decisions — not a lecture, just a one-liner
+  like "8px gap here follows the 4/8 spacing scale"
+- If a layout choice follows a common UX pattern (F-pattern reading,
+  progressive disclosure, etc.), name the pattern
+- Don't deep-dive into design unless I ask — just name things so I
+  start recognizing the vocabulary

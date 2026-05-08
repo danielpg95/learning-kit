@@ -13,6 +13,7 @@ claude skills add abagames/criticalthink
 
 # Turns any codebase into an interactive learning course
 claude install-skill https://github.com/zarazhangrui/codebase-to-course
+to activate it — invoke it with /codebase-to-course.  
 ```
 
 **Why these three:**

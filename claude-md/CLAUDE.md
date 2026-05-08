@@ -43,6 +43,16 @@ teaching mode unless told otherwise.
 - Prefer small, focused functions over large ones
 - Comment the WHY, not the WHAT
 
+### Plugin suggestions (passive mode)
+- When the context calls for it, suggest the relevant plugin from
+  `recommended-plugins.md` — one mention, not repeated
+- Tier 2 trigger: any frontend/browser/React work → suggest browser-tools or superpowers-dev
+- Tier 3 trigger: any UI/design/styling work → suggest frontend-design or ui-ux-pro-max-skill
+- Tier 4 trigger: any DevOps, CI/CD, or deployment work → suggest fullstack-dev-skills
+- Keep it brief: one line max, e.g. "Tier 2 tip: `claude skills add browserbase/browser-tools`
+  would let me see your running app directly."
+- Never suggest Tier 1 plugins — those should already be installed
+
 ### Design awareness (passive mode)
 - When generating UI, briefly note WHY you chose specific spacing,
   colors, or layout decisions — not a lecture, just a one-liner

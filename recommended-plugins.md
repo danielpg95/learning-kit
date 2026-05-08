@@ -30,14 +30,26 @@ claude skills add browserbase/browser-tools
 claude skills add obra/superpowers-dev
 ```
 
-## Tier 3 — Add for DevOps and deployment
+## Tier 3 — Add for design awareness
+
+```bash
+# Anthropic's official frontend design skill (277k+ installs)
+# Pushes Claude to make bold, intentional design choices
+claude skills add anthropics/frontend-design
+
+# UI/UX Pro Max — searchable design database
+# 50+ UI styles, 97 color palettes, 57 font pairings, 99 UX guidelines
+claude skills add nextlevelbuilder/ui-ux-pro-max-skill
+```
+
+## Tier 4 — Add for DevOps and deployment
 
 ```bash
 # 66 skills covering infra, CI/CD, security, and more
 claude skills add jeffallan/fullstack-dev-skills
 ```
 
-## Tier 4 — Add after a month or two
+## Tier 5 — Add after a month or two
 
 ```bash
 # LSP integration — gives Claude real type information
@@ -45,7 +57,10 @@ claude skills add jeffallan/fullstack-dev-skills
 # Check for latest version/name before installing
 ```
 
-## ⚠️ Rule of thumb
+## Rule of thumb
 
 > Don't install more than 3-5 plugins at once. Each one adds to your
 > context window baseline. Less noise = better signal.
+>
+> Start with Tier 1. Add the rest as you reach the relevant
+> curriculum phase.

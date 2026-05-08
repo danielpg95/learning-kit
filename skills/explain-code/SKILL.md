@@ -17,9 +17,10 @@ When explaining code, follow this structure:
    Example:
    ```
    Request → Middleware → Route Handler → DB Query → Response
-                 ↓                            ↓
-            Auth check                   Serializer
+                ↓                            ↓
+           Auth check                   Serializer
    ```
+
 3. **Walk through the code**
    Go step by step. Number each step. Reference specific line numbers when
    the user has shared a file.

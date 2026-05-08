@@ -20,15 +20,19 @@ does the same thing.
 
 ### 3. Side by side
 Show both implementations in a comparison block:
+
+```
 ── Rails ──────────────────────────────────
 class PostsController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
 end
+
 ── Next.js (middleware) ────────────────────
 export function middleware(request) {
-const token = request.cookies.get('session')
-if (!token) return NextResponse.redirect('/login')
+  const token = request.cookies.get('session')
+  if (!token) return NextResponse.redirect('/login')
 }
+```
 
 ### 4. Key differences
 What's genuinely different (not just syntax)?

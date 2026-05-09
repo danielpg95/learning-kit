@@ -85,6 +85,34 @@ cd ~/my-project
 | `/checkpoint` | Summarize what you've learned this session |
 | `/evaluate <phase>` | Run curriculum phase evaluation gate |
 
+## Starting a curriculum project
+
+Each curriculum project lives in its own directory, separate from this repo. Here's the setup flow:
+
+```bash
+# 1. Create a directory for your project
+mkdir ~/projects/bookmarks-manager
+cd ~/projects/bookmarks-manager
+
+# 2. Install the learning kit into it
+~/code/learning-kit/install.sh --project
+
+# 3. Open it in VS Code with Claude Code
+code .
+```
+
+The `--project` install copies skills, commands, and `CURRICULUM.md` into `.claude/` and the project root so Claude has all the learning context when you open that directory.
+
+Once inside the project, start Claude Code and tell it which phase you're on:
+
+```
+I'm starting Phase 1.1 of the curriculum. Let's build the vanilla JS bookmarks manager.
+```
+
+Use `/checkpoint` at the end of each session and `/evaluate 1.1` to run the evaluation gate before moving to the next phase.
+
+> **Tip:** Once you finish a phase, run `/codebase-to-course` in Claude Code. It generates an interactive single-page HTML walkthrough of everything you built — useful for cementing understanding before moving on.
+
 ## The curriculum
 
 See `curriculum/CURRICULUM.md` for the full 3-project learning path:

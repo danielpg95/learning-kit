@@ -79,12 +79,24 @@ The `.gitignore` block looks like this:
 
 ```
 # --- learning-kit ---
-.claude/
+.claude/skills/learning-mode/
+.claude/skills/explain-code/
+.claude/skills/review-my-code/
+.claude/skills/concept-bridge/
+.claude/commands/why.md
+.claude/commands/teach.md
+.claude/commands/compare.md
+.claude/commands/review.md
+.claude/commands/checkpoint.md
+.claude/commands/evaluate.md
+.claude/.learning-kit-installed
 CLAUDE.md
 docs/CURRICULUM.md
 progress.md
 # --- end learning-kit ---
 ```
+
+Only the files the kit installs are ignored — other `.claude/` files your team commits are unaffected.
 
 ## Available commands
 

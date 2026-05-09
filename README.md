@@ -73,6 +73,18 @@ cd ~/my-project
 - `CLAUDE.md` → project root
 - `CURRICULUM.md` → `docs/`
 - `progress.md` → project root
+- Adds a `.gitignore` section for all of the above (removed on uninstall)
+
+The `.gitignore` block looks like this:
+
+```
+# --- learning-kit ---
+.claude/
+CLAUDE.md
+docs/CURRICULUM.md
+progress.md
+# --- end learning-kit ---
+```
 
 ## Available commands
 
@@ -84,6 +96,25 @@ cd ~/my-project
 | `/review` | Review recent code through a learning lens |
 | `/checkpoint` | Summarize what you've learned this session |
 | `/evaluate <phase>` | Run curriculum phase evaluation gate |
+
+## Using it on any existing repo
+
+The kit isn't only for the curriculum. You can drop it into any repo you're actively learning from, use it while you explore or contribute, then remove it cleanly when you're done — leaving no trace in git history.
+
+```bash
+# Inside any repo you're working in
+cd ~/projects/some-existing-repo
+~/code/learning-kit/install.sh --project
+
+# Use /why, /teach, /review, /checkpoint as you work...
+
+# When done, remove everything it added
+~/code/learning-kit/uninstall.sh --project
+```
+
+The `.gitignore` entries are added automatically so the installed files never show up as untracked changes. Uninstalling removes those entries too.
+
+> **Warning:** The install copies `CLAUDE.md` into the project root, which is how Claude picks up the learning-mode instructions. If the repo already has a `CLAUDE.md`, the installer will back it up before overwriting — but review the backup before continuing, since that file may contain rules the project depends on.
 
 ## Starting a curriculum project
 

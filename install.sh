@@ -12,6 +12,28 @@ usage() {
   exit 1
 }
 
+update_gitignore() {
+  local project_root="$1"
+  local gitignore="$project_root/.gitignore"
+  local marker="# --- learning-kit ---"
+
+  if grep -qF "$marker" "$gitignore" 2>/dev/null; then
+    echo "  ⏭  .gitignore already has learning-kit entries (kept)"
+    return
+  fi
+
+  {
+    printf "\n"
+    echo "# --- learning-kit ---"
+    echo ".claude/"
+    echo "CLAUDE.md"
+    echo "docs/CURRICULUM.md"
+    echo "progress.md"
+    echo "# --- end learning-kit ---"
+  } >> "$gitignore"
+  echo "  ✅ .gitignore updated"
+}
+
 backup_if_exists() {
   local target="$1"
   if [ -e "$target" ]; then
@@ -89,6 +111,11 @@ install_to() {
         echo "  ⏭  progress.md already exists (kept)"
       fi
     fi
+  fi
+
+  # ── .gitignore (project installs only) ────────────
+  if [ -n "$claude_md_dest" ]; then
+    update_gitignore "$claude_md_dest"
   fi
 
   # ── Marker for clean uninstall ─────────────────────

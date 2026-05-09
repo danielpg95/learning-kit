@@ -6,6 +6,18 @@ MARKER=".learning-kit-installed"
 SKILLS=(learning-mode explain-code review-my-code concept-bridge)
 COMMANDS=(why.md teach.md compare.md review.md checkpoint.md evaluate.md)
 
+clean_gitignore() {
+  local project_root="$1"
+  local gitignore="$project_root/.gitignore"
+
+  [ -f "$gitignore" ] || return
+  grep -qF "# --- learning-kit ---" "$gitignore" || return
+
+  awk '/^# --- learning-kit ---/{skip=1} !skip{print} /^# --- end learning-kit ---/{skip=0}' \
+    "$gitignore" > "${gitignore}.tmp" && mv "${gitignore}.tmp" "$gitignore"
+  echo "  🗑  .gitignore entries removed"
+}
+
 usage() {
   echo "Usage: $(basename "$0") [--global | --project]"
   echo ""
@@ -77,6 +89,11 @@ uninstall_from() {
         echo "  ⏭  progress.md kept"
       fi
     fi
+  fi
+
+  # ── .gitignore ────────────────────────────────────
+  if [ -n "$claude_md_dest" ]; then
+    clean_gitignore "$claude_md_dest"
   fi
 
   # ── Remove marker ─────────────────────────────────

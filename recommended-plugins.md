@@ -24,11 +24,11 @@ to activate it — invoke it with /codebase-to-course.
 ## Tier 2 — Add when starting frontend work
 
 ```bash
-# Browser integration — Claude can see your app
-claude skills add browserbase/browser-tools
+# Browser integration — Claude can navigate, click, screenshot your app
+claude mcp add playwright -- npx @playwright/mcp@latest
 
-# TDD workflows and dev best practices
-claude skills add obra/superpowers-dev
+# Structured dev workflow — 7-phase approach: explore → design → implement → review
+claude plugins install feature-dev
 ```
 
 ## Tier 3 — Add for design awareness
